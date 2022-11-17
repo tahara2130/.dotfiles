@@ -2,8 +2,7 @@ local cmd = vim.cmd
 local o = vim.o
 local g = vim.g
 local keymap = vim.keymap
-
-cmd("colorscheme catppuccin")
+local api = vim.api
 
 o.clipboard = "unnamedplus"
 o.mouse = "a"
@@ -18,7 +17,8 @@ o.splitbelow = true
 o.termguicolors = true
 o.updatetime = 100
 
-g.catppuccin_flavor = "mocha"
+cmd("colorscheme shado")
+
 g.mapleader = " "
 
 keymap.set("i", "jk", "<ESC>", { silent = true })
@@ -35,6 +35,11 @@ keymap.set("n", "<Leader>q", ":bprevious<CR>:bdelete #<CR>", { silent = true })
 -- keymap.set("n", "<C-n>", "<cmd>lua vim.lsp.diagnostic.goto.prev()<CR>", { silent = true })
 -- keymap.set("n", "<C-p>", "<cmd>lua vim.lsp.diagnostic.goto.next()<CR>", { silent = true })
 
+cmd("autocmd BufEnter * set formatoptions-=cro")
+cmd("autocmd BufEnter * setlocal formatoptions-=cro")
+
 require('Plugins/dashboard')
 require('Plugins/lualine')
+require('Plugins/lsp')
+require('Plugins/catppuccin')
 require('nvim-autopairs').setup {}
