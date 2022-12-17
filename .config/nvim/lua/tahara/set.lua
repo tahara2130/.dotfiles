@@ -25,10 +25,9 @@ opt.wrap = false
 opt.swapfile = false
 opt.backup = false
 
-opt.termguicolors = true
-
 opt.scrolloff = 8
 
+opt.termguicolors = true
 opt.updatetime = 50
 
 cmd("autocmd BufEnter * set formatoptions-=cro")
