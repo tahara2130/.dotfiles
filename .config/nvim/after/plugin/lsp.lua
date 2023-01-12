@@ -6,6 +6,7 @@ lsp.ensure_installed({
     'tsserver',
     'eslint',
     'sumneko_lua',
+    'gopls',
 })
 
 lsp.on_attach(function(client, bufnr)
